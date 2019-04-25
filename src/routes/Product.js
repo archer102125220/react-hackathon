@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Redirect, Link } from "react-router-dom";
 import { connect } from 'react-redux';
 import { addCar } from '../actions';
-import { type } from 'os';
 
 class Product extends Component {
   constructor() {
@@ -53,7 +52,7 @@ class Product extends Component {
                     ItemArry.add(this.props.products[0].product[this.props.location.state.index]);*/
                     let ItemArry = (this.props.shoppingcars > 0) ? [] : this.props.shoppingcars[0].cars;
                     ItemArry.push(this.props.products[0].product[this.props.location.state.index]);
-                    ItemArry = ItemArry.filter((val) => val.id != undefined);
+                    ItemArry = ItemArry.filter((val) => val.id !== undefined);
                     this.UpdataProps('Shoppingcar', ItemArry);
                   }}>加入購物車</Link>}
               </div>

@@ -49,8 +49,7 @@ class ShoppingCar extends Component {
                                                 /*let ItemArry = new Set((this.props.Shoppingcars.length < 0) ? [] : this.props.Shoppingcars[0].cars);
                                                 ItemArry.delete(this.props.Shoppingcars[0].cars[index]);*/
                                                 let ItemArry = (this.props.Shoppingcars.length < 0) ? [] : this.props.Shoppingcars[0].cars;
-                                                
-                                                ItemArry = ItemArry.filter((val,key) => key !== index && val.id != undefined);
+                                                ItemArry = ItemArry.filter((val,key) => key !== index && val.id !== undefined);
                                                 this.UpdataProps("Shoppingcar", ItemArry);
                                             }}>從購物車移除</Link>
                                         </div>
