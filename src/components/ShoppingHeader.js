@@ -8,11 +8,11 @@ import { removeCar } from '../actions';//引用actions裡面index.js所自定義
 
 import { Link } from "react-router-dom";
 
-import HomeIcon from "../icon/home.png";
-import Cart from "../icon/shoppingcart.png";
-import CharBot from "../icon/bot.png";
-import Charts from "../icon/charts.png";
-import Map from "../icon/map.png";
+import HomeIcon from "../icon/house.png";
+import Cart from "../icon/commerce-and-shopping.png";
+import CharBot from "../icon/bot2.png";
+import Charts from "../icon/stadistics.png";
+import Map from "../icon/map2.png";
 
 class ShoppingHeader extends Component {
   constructor() {

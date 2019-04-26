@@ -12,9 +12,9 @@ class HighCharts extends Component {
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                 datasets: [
                     {
-                        label: '第一個資料列',
+                        label: ' ',
                         data: [65, 59, 80, 81, 56, 55, 40],
-                        fill: false,
+                        fill: true,
                         borderColor: '#4bc0c0'
                     }
                 ]
@@ -28,22 +28,26 @@ class HighCharts extends Component {
                 legend: {
                     position: 'bottom'
                 }
-            }
+            },
+            updata: true
         };
-        this.DataIni();
+
     }
-    DataIni(){
-        if (this.props.products[0] !== undefined && this.props.shoppingcars[0] !== undefined) {
+    DataIni() {
+        if (this.props.products[0] !== undefined && this.props.shoppingcars[0] !== undefined && this.state.updata === true) {
             let { data } = this.state;
             const product = this.props.products[0].product;
             const shoppingcars = this.props.shoppingcars[0].cars;
-            console.log(shoppingcars);
-            data.labels = product.map((val) => val.homepage);
-            this.setState({ data });
+            data.labels = product.map((val) => val.homepage + " " + val.description);
+            data.datasets[0].data = data.datasets[0].data
+                .map((val, key) => product.filter((valu, index) => index === key)[0])
+                .filter((val) => val !== undefined)
+                .map((val) => shoppingcars.filter((valu) => valu.homepage === val.homepage && valu.description === val.description).length);
+            this.setState({ data, updata: false });
         }
     }
     render() {
-        
+        this.DataIni();
         return (
             <div>
                 <Chart type="bar" data={this.state.data} options={this.state.options} />

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route ,HashRouter } from "react-router-dom";
 
 import { connect } from 'react-redux';
 import { addProduct, addCar } from './actions';
@@ -16,6 +16,8 @@ import Product from './routes/Product';
 import ShoppingCar from './routes/ShoppingCar';
 import HighCharts from './routes/HighCharts';
 import GoogleMaps from './routes/GoogleMaps';
+
+
 
 class App extends Component {
   constructor() {
@@ -43,6 +45,14 @@ class App extends Component {
       Product[1].amount = 190;
       Product[2].amount = 255;
       Product[3].amount = 300;
+      Product[0].lat = 25;
+      Product[0].lng = 121;
+      Product[1].lat = 25.3;
+      Product[1].lng = 121.5;
+      Product[2].lat = 23;
+      Product[2].lng = 121.1;
+      Product[3].lat = 24.2;
+      Product[3].lng = 120.6;
       this.props.addProduct(Product);
       this.setState({ Product: this.props.products[0].product });
       window.localStorage.setItem("Shoppingcar", (window.localStorage.getItem("Shoppingcar") == null) ? '[]' : window.localStorage.getItem("Shoppingcar"));
@@ -52,6 +62,7 @@ class App extends Component {
 
   render() {
     return (
+      <HashRouter>
       <Router>
         <ShoppingHeader />
         <Route path="/" exact render={(props) => <ShoppingMin {...props} />} />
@@ -62,6 +73,7 @@ class App extends Component {
         <Route path="/GoogleMaps" render={(props) => <GoogleMaps {...props} />} />
         <ShoppingFooter />
       </Router>
+      </HashRouter>
     );
   }
 }
