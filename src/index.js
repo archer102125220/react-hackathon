@@ -13,6 +13,9 @@ import { createStore } from 'redux';
 // 引入自己的 reducers(自己定義的資料名稱及對應方法，詳細看./reducers/index.js)
 import rootReducer from './reducers';
 
+//引入自己的i18n萬國語系設定檔案
+import './i18n';
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

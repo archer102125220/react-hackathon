@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { withTranslation } from 'react-i18next';
+import i18n from '../i18n';
 //import PropTypes from 'prop-types'; // →用以驗證資料
 
 /*
@@ -23,7 +25,8 @@ class ShoppingHeader extends Component {
     /*
     //Provider(使用redux時候的最上層)將從請求回來的資料從props裡取出來
     const { product, removeCar } = this.props;
-    console.log('1',product);*/
+    console.log('1',product);
+    */
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-blue fixed-top">
         <div className="container">
@@ -57,6 +60,21 @@ class ShoppingHeader extends Component {
                 <Link to={{ pathname: "/GoogleMaps" }} className="nav-link">
                   <img className="Icon" src={Map} alt="" />
                 </Link>
+              </li>
+              <li className="nav-item">
+                <button onClick={()=>{
+                  i18n.changeLanguage("en");
+                }}>英文語系</button>
+              </li>
+              <li className="nav-item">
+                <button onClick={()=>{
+                  i18n.changeLanguage("zhTW");
+                }}>繁體中文語系</button>
+              </li>
+              <li className="nav-item">
+                <button onClick={()=>{
+                  i18n.changeLanguage("zhCN");
+                }}>簡體中文語系</button>
               </li>
             </ul>
           </div>

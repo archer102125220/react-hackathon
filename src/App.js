@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route ,HashRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route, HashRouter } from "react-router-dom";
 
 import { connect } from 'react-redux';
 import { addProduct, addCar } from './actions';
@@ -63,16 +63,16 @@ class App extends Component {
   render() {
     return (
       <HashRouter>
-      <Router>
-        <ShoppingHeader />
-        <Route path="/" exact render={(props) => <ShoppingMin {...props} />} />
-        <Route path="/ShoppingProduct" render={(props) => <Product {...props} setstates={this.SetStates} />} />
-        <Route path="/ShoppingCar" render={(props) => <ShoppingCar {...props} setstates={this.SetStates} />} />
-        <Route path="/ShoppingCharBot" render={(props) => <ShoppingCharBot {...props} />} />
-        <Route path="/HighCharts" render={(props) => <HighCharts {...props} />} />
-        <Route path="/GoogleMaps" render={(props) => <GoogleMaps {...props} />} />
-        <ShoppingFooter />
-      </Router>
+        <Router>
+          <ShoppingHeader />
+          <Route path="/" exact render={(props) => <ShoppingMin {...props} />} />
+          <Route path="/ShoppingProduct" render={(props) => <Product {...props} setstates={this.SetStates} />} />
+          <Route path="/ShoppingCar" render={(props) => <ShoppingCar {...props} setstates={this.SetStates} />} />
+          <Route path="/ShoppingCharBot" render={(props) => <ShoppingCharBot {...props} />} />
+          <Route path="/HighCharts" render={(props) => <HighCharts {...props} />} />
+          <Route path="/GoogleMaps" render={(props) => <GoogleMaps {...props} />} />
+          <ShoppingFooter />
+        </Router>
       </HashRouter>
     );
   }
@@ -88,7 +88,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return ({
     addProduct: (item) => dispatch(addProduct(item)),
-    addCar: (item) => dispatch(addCar(item)),
+    addCar: (item) => dispatch(addCar(item))
   });
 };
 
