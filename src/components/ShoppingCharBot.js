@@ -5,8 +5,8 @@ import ReactWebChat from 'botframework-webchat';
 
 
 class CharBot extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {};
     const echoBotKey = 'mszOYMt2gCk.0du-QdeGG1mDlHgpR33pO8z92YWgP5Eg4btzmnQLqNY';
     //const BaseBotKey = 'Q1h7uPzEu3I.0uvcX9Lpjg_Xc74xvm9IqDvWsRR-ZO14Mi1vHAqFiR0';

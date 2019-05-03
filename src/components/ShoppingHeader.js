@@ -17,8 +17,10 @@ import Charts from "../icon/stadistics.png";
 import Map from "../icon/map2.png";
 
 class ShoppingHeader extends Component {
-  constructor() {
-    super();
+  // 記得如果寫建構子要補上 props
+  // 而且你的 state 是空的，基本上可以不用寫建構子
+  constructor(props) {
+    super(props);
     this.state = {};
   }
   render() {
@@ -62,24 +64,19 @@ class ShoppingHeader extends Component {
                 </Link>
               </li>
               <li className="nav-item">
-                <button onClick={()=>{
-                  i18n.changeLanguage("en");
-                }}>英文語系</button>
+                {/** 程式碼可以排版簡單清楚一些 */}
+                <button onClick={() => i18n.changeLanguage("en")}>英文語系</button>
               </li>
               <li className="nav-item">
-                <button onClick={()=>{
-                  i18n.changeLanguage("zhTW");
-                }}>繁體中文語系</button>
+                <button onClick={() => i18n.changeLanguage("zhTW")}>繁體中文語系</button>
               </li>
               <li className="nav-item">
-                <button onClick={()=>{
-                  i18n.changeLanguage("zhCN");
-                }}>簡體中文語系</button>
+                <button onClick={() => i18n.changeLanguage("zhCN")}>簡體中文語系</button>
               </li>
             </ul>
           </div>
         </div>
-      </nav>
+      </nav >
     );
   }
 }

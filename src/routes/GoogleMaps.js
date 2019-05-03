@@ -7,18 +7,21 @@ import { connect } from 'react-redux';
 class MapIcon extends Component {
   constructor(porps) {
     super(porps);
-    this.state={
-      index:porps.index,
-      lat:porps.lat,
-      lng:porps.lng,
-      img:porps.img,
-      alt:porps.alt,
+    this.state = {
+      index: porps.index,
+      lat: porps.lat,
+      lng: porps.lng,
+      img: porps.img,
+      alt: porps.alt,
     }
   }
   render() {
-    return (<span>
-      <img key={this.state.index} className="MapIcon" lat={this.state.lat} lng={this.state.lng} src={this.state.img} alt={this.state.lat} />
-    </span>);
+    // 把元素排版
+    return (
+      <span>
+        <img key={this.state.index} className="MapIcon" lat={this.state.lat} lng={this.state.lng} src={this.state.img} alt={this.state.lat} />
+      </span>
+    );
   }
 }
 
@@ -33,7 +36,7 @@ class GoogleMaps extends Component {
   render() {
     return (
       <div style={{ height: '100vh', width: '100%' }}>
-      <span className="MapLitle">您購買的產品生產地</span>
+        <span className="MapLitle">您購買的產品生產地</span>
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyD5g_QO7b1pBfgl9OtX6vchzZwX1Vmxo2Y" }}
           defaultCenter={this.props.center}

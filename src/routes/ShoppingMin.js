@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 
 class ShoppingMin extends Component {
-    constructor() {
-        super();
+    // 既然你要寫建構子，記得補上 props，否則會出問題
+    constructor(props) {
+        super(props);
         this.state = {};
     }
     render() {
@@ -17,7 +18,7 @@ class ShoppingMin extends Component {
                 </header>
                 <div className="row text-center">
                     {
-                        (this.props.products.length>0)
+                        (this.props.products.length > 0)
                             ? this.props.products[0].product.map((item, index) => {
                                 return (<div key={index} className="col-lg-3 col-md-6 mb-4">
                                     <div className="card h-100">

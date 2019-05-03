@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import { addCar } from '../actions';
 
 class ShoppingCar extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {};
     }
 

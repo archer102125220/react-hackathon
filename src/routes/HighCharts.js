@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 
 
 class HighCharts extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             data: {
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
