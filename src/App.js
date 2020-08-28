@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, HashRouter } from "react-router-dom";
 
 import { connect } from 'react-redux';
-import { addProduct, addCar } from './actions';
+// import { addProduct, addCar } from './actions';
+import models from './models';
 
 //import $ from 'jquery';
 
@@ -17,6 +18,7 @@ import ShoppingCar from './routes/ShoppingCar';
 import HighCharts from './routes/HighCharts';
 import GoogleMaps from './routes/GoogleMaps';
 
+const { addProduct, addCar } = models;
 
 
 class App extends Component {
@@ -63,7 +65,6 @@ class App extends Component {
   render() {
     return (
       <HashRouter>
-        <Router>
           <ShoppingHeader />
           <Route path="/" exact render={(props) => <ShoppingMin {...props} />} />
           <Route path="/ShoppingProduct" render={(props) => <Product {...props} setstates={this.SetStates} />} />
@@ -72,7 +73,6 @@ class App extends Component {
           <Route path="/HighCharts" render={(props) => <HighCharts {...props} />} />
           <Route path="/GoogleMaps" render={(props) => <GoogleMaps {...props} />} />
           <ShoppingFooter />
-        </Router>
       </HashRouter>
     );
   }

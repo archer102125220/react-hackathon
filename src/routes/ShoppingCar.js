@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
-import { addCar } from '../actions';
+// import { addCar } from '../actions';
+import models from '../models';
+const { addCar } = models;
 
 class ShoppingCar extends Component {
     constructor() {

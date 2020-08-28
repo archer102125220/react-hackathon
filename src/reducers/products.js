@@ -1,17 +1,20 @@
-const products = (state = [], action) => {
+const products = (products = [], action) => {
+  const productsReducers = {
+    ADD_Product: () => {
+      return [
+        ...products,
+        {
+          product: action.payload,
+        }
+      ];
+    },
+    default_function: () => {
+      return products;
+    }
+  };
   // Reducers
   // 依據 Actions 所定義的 type 進行資料的儲存
-  switch (action.type) {
-    case 'ADD_Product':
-      return [
-        ...state,
-        {
-          product: action.product,
-        }
-      ]
-    default:
-      return state;
-  }
+  return (productsReducers[action.type] || productsReducers.default_function)();
 }
 
 export default products;
