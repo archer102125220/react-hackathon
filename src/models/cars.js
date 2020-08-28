@@ -13,7 +13,7 @@ export default {
       },
       REMOVE_CAR: () => {
         return cars.map(cars =>
-          (cars.id === action.id)
+          (cars.id === action.payload)
             ? undefined
             : cars
         ).filter(cars => cars !== undefined)
